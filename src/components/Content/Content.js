@@ -1,11 +1,14 @@
 import React from "react";
 import Child from "../Child/Child";
+import ThemeContext from "../../Context/themeContext";
 
-function Content({ theme }) {
+function Content() {
   return (
     <div>
       <p>THis is section component</p>
-      <Child theme={theme} />
+      <ThemeContext.Consumer>
+        {({ theme }) => <Child theme={theme} />}
+      </ThemeContext.Consumer>
     </div>
   );
 }
