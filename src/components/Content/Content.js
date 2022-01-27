@@ -1,16 +1,18 @@
-import React from "react";
-import Child from "../Child/Child";
-import ThemeContext from "../../Context/themeContext";
+import React from 'react';
+import Child from '../Child/Child';
+import ThemeContext from '../../Context/themeContext';
 
-function Content() {
-  return (
-    <div>
-      <p>THis is section component</p>
-      <ThemeContext.Consumer>
-        {({ theme }) => <Child theme={theme} />}
-      </ThemeContext.Consumer>
-    </div>
-  );
+export default class Content extends React.Component {
+    // componentDidMount() {}
+    render() {
+        const { theme, swithBtn } = this.context;
+        return (
+            <div>
+                <p>THis is section component</p>
+                <Child theme={theme} swithBtn={swithBtn} />
+            </div>
+        );
+    }
 }
 
-export default Content;
+Content.contextType = ThemeContext;

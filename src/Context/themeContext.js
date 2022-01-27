@@ -1,5 +1,7 @@
-import createContext from "../Library/CustomContext";
+import React from "react";
+// import createContext from "../Library/CustomContext";
 
-const ThemeContext = createContext();
+
+const ThemeContext = React.createContext();
 
 export default ThemeContext;
